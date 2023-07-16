@@ -6,6 +6,10 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
-  const events = await prisma.event.findMany({});
-  res.status(200).json(events);
+  try {
+    const events = await prisma.event.findMany({});
+    res.status(200).json(events);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to load data" });
+  }
 }
