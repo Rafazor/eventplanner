@@ -2,9 +2,7 @@ import { useQuery } from "react-query";
 import { IEvent } from "@/modules/shared/types/IEvent";
 import { getEvents } from "@/modules/shared/api/events";
 
-interface IProps {}
-
-export default function CoreContainer(props: IProps) {
+export default function CoreContainer() {
   const { isLoading, data } = useQuery<IEvent[]>("getEvents", getEvents);
 
   if (isLoading) return <p>Loading...</p>;
