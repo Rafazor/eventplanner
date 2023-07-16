@@ -2,8 +2,8 @@ export interface IEvent {
   id: string;
   title: string;
   description: string;
-  start: Date;
-  end: Date;
+  startDate: Date;
+  endDate: Date;
   image: string;
   categories: string[];
 }

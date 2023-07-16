@@ -3,6 +3,6 @@ import CoreContainer from "@/modules/events/containers/CoreContainer";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Events() {
   return <CoreContainer />;
 }

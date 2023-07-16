@@ -11,7 +11,7 @@ export default function LayoutComponent(props: IProps) {
   return (
     <div className="bg-white dark:bg-purple-950 h-screen pt-24">
       <NavComponent />
-      <div className="max-w-screen-xl mx-auto">{children}</div>
+      <div className="max-w-screen-xl mx-auto px-4">{children}</div>
     </div>
   );
 }
