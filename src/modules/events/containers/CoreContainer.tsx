@@ -1,13 +1,11 @@
 import { useQuery } from "react-query";
-import { getEvents } from "@/modules/_api/events";
-import { IEvent } from "@/types/IEvent";
+import { IEvent } from "@/modules/shared/types/IEvent";
+import { getEvents } from "@/modules/shared/api/events";
 
 interface IProps {}
 
 export default function CoreContainer(props: IProps) {
-  const { isLoading, isSuccess, isError, data, error, refetch } = useQuery<
-    IEvent[]
-  >("query-events", getEvents);
+  const { isLoading, data } = useQuery<IEvent[]>("getEvents", getEvents);
 
   if (isLoading) return <p>Loading...</p>;
 
