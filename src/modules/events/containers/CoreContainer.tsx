@@ -14,8 +14,8 @@ export default function CoreContainer(props: IProps) {
   return (
     <div>
       {data?.map((event) => (
-        <div className={"p-3 border-2 border-amber-950 m-3.5"} key={event.id}>
-          <p>{event.title}</p>
+        <div className={"p-3 border-4 border-l-red-500 m-5"} key={event.id}>
+          <p className={"text-2xl"}>{event.title}</p>
           <p>{event.description}</p>
         </div>
       ))}
