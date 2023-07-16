@@ -1,5 +1,6 @@
 import Link from "next/link";
 import LinkButtonComponent from "@/modules/shared/components/LinkButtonComponent";
+import ThemeSwitch from "@/modules/layout/components/ThemeSwitch";
 
 export default function NavComponent() {
   return (
@@ -12,7 +13,10 @@ export default function NavComponent() {
             </span>
           </Link>
         </div>
-        <LinkButtonComponent href={"/manageEvents"} label={"Manage Events"} />
+        <div className="flex gap-10">
+          <ThemeSwitch />
+          <LinkButtonComponent href={"/manageEvents"} label={"Manage Events"} />
+        </div>
       </div>
     </nav>
   );
