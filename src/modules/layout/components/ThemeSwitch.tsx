@@ -4,7 +4,7 @@ import ToggleComponent from "@/modules/shared/components/ToggleComponent";
 
 export default function ThemeSwitch() {
   const [mounted, setMounted] = useState(false);
-  const { setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
@@ -16,6 +16,7 @@ export default function ThemeSwitch() {
 
   return (
     <ToggleComponent
+      value={theme === "dark"}
       onChange={(isChecked) => {
         setTheme(isChecked ? "dark" : "light");
       }}
