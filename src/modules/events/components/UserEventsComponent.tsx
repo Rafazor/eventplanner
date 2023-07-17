@@ -27,7 +27,7 @@ export default function UserEventsComponent(props: IProps) {
         arrows={false}
         showDots={true}
         autoPlay={true}
-        infinite={true}
+        infinite={events.length > 1}
       >
         {events.map((event) => (
           <EventCardComponent event={event} key={event.id} />
