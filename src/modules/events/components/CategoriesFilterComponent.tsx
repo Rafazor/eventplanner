@@ -10,19 +10,26 @@ export default function CategoriesFilterComponent(props: IProps) {
   const { categories, onChange, activeCategory } = props;
 
   return (
-    <div className="flex flex-wrap items-center gap-2">
-      <p>Sort by:</p>
-      {categories.map((category) => (
-        <button
-          key={category}
-          onClick={() => onChange(category)}
-          className={clsx("bg-red-500 text-white px-2 py-1 rounded", {
-            "bg-opacity-50": activeCategory !== category,
-          })}
-        >
-          {category}
-        </button>
-      ))}
+    <div>
+      <p className="font-medium mb-2 text-lg">Discover Upcoming Events:</p>
+      <div className="flex flex-wrap items-center gap-2">
+        <p className="text-gray-400">Sort by:</p>
+        {categories.map((category) => (
+          <button
+            key={category}
+            onClick={() => onChange(category)}
+            className={clsx(
+              "bg-purple-500 text-purple-800 px-4 py-1 rounded-full",
+              {
+                "bg-purple-700": activeCategory === category,
+                "text-purple-50": activeCategory === category,
+              },
+            )}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }

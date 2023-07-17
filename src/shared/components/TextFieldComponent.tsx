@@ -1,5 +1,6 @@
 import { Controller } from "react-hook-form";
 import clsx from "clsx";
+import { HTMLInputTypeAttribute } from "react";
 
 interface IProps {
   control: any;
@@ -9,7 +10,7 @@ interface IProps {
   errors?: any;
   rules?: any;
   placeholder?: string;
-  type?: "text" | "number" | "email" | "password" | "date";
+  type?: HTMLInputTypeAttribute;
 }
 
 export default function TextFieldComponent({

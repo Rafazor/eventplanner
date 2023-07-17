@@ -49,3 +49,37 @@ export function sortEventsByStartDate(events: IEvent[]): IEvent[] {
     return timeDiffA - timeDiffB;
   });
 }
+
+function getOrdinalIndicator(day: number): string {
+  if (day > 3 && day < 21) {
+    return "th";
+  } else {
+    switch (day % 10) {
+      case 1:
+        return "st";
+      case 2:
+        return "nd";
+      case 3:
+        return "rd";
+      default:
+        return "th";
+    }
+  }
+}
+
+export function formatDate(date: Date): string {
+  const options = { month: "long", day: "numeric" };
+  // @ts-ignore
+  const dateFormatted = date.toLocaleString("en-US", options);
+
+  const timeFormatted = date.toLocaleString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: false,
+  });
+
+  const day = date.getDate();
+  const ordinalIndicator = getOrdinalIndicator(day);
+
+  return `${dateFormatted}${ordinalIndicator} | ${timeFormatted}`;
+}

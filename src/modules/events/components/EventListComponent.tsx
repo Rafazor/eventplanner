@@ -21,8 +21,8 @@ export default function EventListComponent(props: IProps) {
       {events.map((event, index) => (
         <EventItemComponent
           className={clsx({
-            "mr-10": index % 2 === 0,
-            "ml-10": index % 2 !== 0,
+            "mr-12": index % 2 === 0,
+            "ml-12": index % 2 !== 0,
           })}
           event={event}
           key={event.id}

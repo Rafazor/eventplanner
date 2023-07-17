@@ -35,7 +35,7 @@ export default function EventFormComponent(props: IProps) {
         }}
       />
       <TextFieldComponent
-        type={"date"}
+        type={"datetime-local"}
         errors={errors}
         label={"Start Date"}
         name={"startDate"}
@@ -45,7 +45,7 @@ export default function EventFormComponent(props: IProps) {
         }}
       />
       <TextFieldComponent
-        type={"date"}
+        type={"datetime-local"}
         errors={errors}
         label={"End Date"}
         name={"endDate"}

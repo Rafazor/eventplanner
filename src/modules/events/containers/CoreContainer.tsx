@@ -20,8 +20,8 @@ export default function CoreContainer() {
   if (!eventsList) return <p>No events</p>;
 
   return (
-    <>
-      <UserEventsComponent events={userEvents} />
+    <div className="flex flex-col gap-8">
+      {userEvents.length > 0 && <UserEventsComponent events={userEvents} />}
       <CategoriesFilterComponent
         categories={categories}
         onChange={handleActiveCategory}
@@ -32,6 +32,6 @@ export default function CoreContainer() {
         handleSubscribe={handleSubscribe}
         subscribedEvents={subscribedEvents}
       />
-    </>
+    </div>
   );
 }
