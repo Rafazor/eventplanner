@@ -19,11 +19,11 @@ export default function CategoriesFilterComponent(props: IProps) {
             key={category}
             onClick={() => onChange(category)}
             className={clsx(
-              "bg-purple-500 text-purple-800 px-4 py-1 rounded-full",
               {
                 "bg-purple-700": activeCategory === category,
                 "text-purple-50": activeCategory === category,
               },
+              "bg-purple-500 text-purple-800 px-4 py-1 rounded-full",
             )}
           >
             {category}
