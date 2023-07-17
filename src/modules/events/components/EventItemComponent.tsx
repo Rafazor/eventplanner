@@ -1,5 +1,4 @@
 import { IEvent } from "@/shared/types/IEvent";
-import Image from "next/image";
 import { isURL } from "@/shared/utils/commonUtils";
 import clsx from "clsx";
 import { IoStar, IoStarOutline } from "react-icons/io5";
@@ -16,6 +15,7 @@ export default function EventItemComponent(props: IProps) {
 
   return (
     <div
+      data-testid="event-item"
       className={clsx(
         "cursor-pointer gap-5 md:gap-10 bg-purple-100 dark:bg-purple-400 hover:bg-purple-300 dark:hover:bg-purple-500 flex items-center justify-between rounded-3xl px-4 py-2 shadow-md",
         className,
@@ -32,9 +32,17 @@ export default function EventItemComponent(props: IProps) {
       </div>
       <div>
         {isSubscribed ? (
-          <IoStar size={30} className={"text-purple-700"} />
+          <IoStar
+            data-testid="subscribed-icon"
+            size={30}
+            className={"text-purple-700"}
+          />
         ) : (
-          <IoStarOutline size={30} className={"text-black"} />
+          <IoStarOutline
+            data-testid="unsubscribed-icon"
+            size={30}
+            className={"text-black"}
+          />
         )}
       </div>
     </div>
