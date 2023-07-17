@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import {
   extractUniqueCategories,
   filterEventsByCategory,
+  sortEventsByStartDate,
   toggleStringInArray,
 } from "@/modules/events/utils/eventsUtil";
 import { useLocalStorage } from "@/shared/hooks/useLocalStorage";
@@ -37,7 +38,9 @@ export default function useEvents() {
 
     if (!subscribedEvents) return [];
 
-    return data.filter((event) => subscribedEvents.includes(event.id));
+    return sortEventsByStartDate(
+      data.filter((event) => subscribedEvents.includes(event.id)),
+    );
   }, [data, subscribedEvents]);
 
   const handleActiveCategory = (category: string) => {

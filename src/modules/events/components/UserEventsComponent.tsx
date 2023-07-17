@@ -13,6 +13,7 @@ export default function UserEventsComponent(props: IProps) {
         <div key={event.id}>
           <p>{event.title}</p>
           <p>{event.description}</p>
+          <p>{new Date(event.startDate).toLocaleDateString()}</p>
         </div>
       ))}
     </div>

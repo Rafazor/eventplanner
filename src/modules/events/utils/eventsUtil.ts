@@ -30,9 +30,22 @@ export function toggleStringInArray(arr: string[], str: string): string[] {
 }
 
 export function sortEventsByStartDate(events: IEvent[]): IEvent[] {
-  return events.sort((a, b) => {
+  const currentDate = new Date();
+
+  // Filter out events with start dates in the past
+  const filteredEvents = events.filter((event) => {
+    const startDate = new Date(event.startDate);
+    return startDate >= currentDate;
+  });
+
+  // Sort the filtered events based on the closest start date to the current date
+  return filteredEvents.sort((a, b) => {
     const dateA = new Date(a.startDate);
     const dateB = new Date(b.startDate);
-    return dateA.getTime() - dateB.getTime();
+
+    const timeDiffA = Math.abs(dateA.getTime() - currentDate.getTime());
+    const timeDiffB = Math.abs(dateB.getTime() - currentDate.getTime());
+
+    return timeDiffA - timeDiffB;
   });
 }
