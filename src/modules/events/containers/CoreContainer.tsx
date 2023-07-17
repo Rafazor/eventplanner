@@ -1,16 +1,28 @@
-import { useQuery } from "react-query";
-import { IEvent } from "@/types/IEvent";
-import { getEvents } from "@/services/events";
 import EventListComponent from "@/modules/events/components/EventListComponent";
+import useEvents from "@/modules/events/hooks/useEvents";
+import CategoriesFilterComponent from "@/modules/events/components/CategoriesFilterComponent";
 
 export default function CoreContainer() {
-  const { isLoading, data } = useQuery<IEvent[]>("getEvents", getEvents);
+  const {
+    eventsList,
+    isLoading,
+    categories,
+    handleActiveCategory,
+    activeCategory,
+  } = useEvents();
 
   if (isLoading) return <p>Loading...</p>;
 
+  if (!eventsList) return <p>No events</p>;
+
   return (
     <>
-      <EventListComponent events={data!} />
+      <CategoriesFilterComponent
+        categories={categories}
+        onChange={handleActiveCategory}
+        activeCategory={activeCategory}
+      />
+      <EventListComponent events={eventsList} />
     </>
   );
 }

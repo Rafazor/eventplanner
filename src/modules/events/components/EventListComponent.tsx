@@ -1,4 +1,4 @@
-import { IEvent } from "@/types/IEvent";
+import { IEvent } from "@/shared/types/IEvent";
 import EventItemComponent from "@/modules/events/components/EventItemComponent";
 
 interface IProps {
