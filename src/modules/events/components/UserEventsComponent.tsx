@@ -9,7 +9,12 @@ export default function UserEventsComponent(props: IProps) {
 
   return (
     <div>
-      <p>user events</p>
+      {events.map((event) => (
+        <div key={event.id}>
+          <p>{event.title}</p>
+          <p>{event.description}</p>
+        </div>
+      ))}
     </div>
   );
 }

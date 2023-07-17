@@ -5,12 +5,17 @@ import { useMemo, useState } from "react";
 import {
   extractUniqueCategories,
   filterEventsByCategory,
+  toggleStringInArray,
 } from "@/modules/events/utils/eventsUtil";
+import { useLocalStorage } from "@/shared/hooks/useLocalStorage";
 
 export default function useEvents() {
   const [categories, setCategories] = useState<string[]>([]);
-  const [userEvents, setUserEvents] = useState<IEvent[]>([]);
   const [activeCategory, setActiveCategory] = useState<string>("");
+  const [subscribedEvents, setSubscribedEvents] = useLocalStorage<string[]>(
+    "subscribedEvents",
+    [],
+  );
 
   const { isLoading, data } = useQuery<IEvent[]>("getEvents", getEvents, {
     onSuccess: (events) => {
@@ -27,6 +32,14 @@ export default function useEvents() {
     return filterEventsByCategory(data, activeCategory);
   }, [activeCategory, data]);
 
+  const userEvents = useMemo(() => {
+    if (!data) return [];
+
+    if (!subscribedEvents) return [];
+
+    return data.filter((event) => subscribedEvents.includes(event.id));
+  }, [data, subscribedEvents]);
+
   const handleActiveCategory = (category: string) => {
     if (category === activeCategory) {
       setActiveCategory("");
@@ -36,6 +49,13 @@ export default function useEvents() {
     setActiveCategory(category);
   };
 
+  const handleSubscribe = (eventId: string) => {
+    if (!subscribedEvents) return;
+
+    const newSubscribedEvents = toggleStringInArray(subscribedEvents, eventId);
+    setSubscribedEvents(newSubscribedEvents);
+  };
+
   return {
     isLoading,
     eventsList,
@@ -43,5 +63,7 @@ export default function useEvents() {
     userEvents,
     handleActiveCategory,
     activeCategory,
+    handleSubscribe,
+    subscribedEvents,
   };
 }
