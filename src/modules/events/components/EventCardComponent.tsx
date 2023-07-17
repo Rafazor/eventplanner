@@ -23,7 +23,7 @@ export default function EventCardComponent(props: IProps) {
           <p className="text-xl mb-1 font-bold text-ellipsis overflow-hidden line-clamp-1">
             {event.title}
           </p>
-          <p className={"mb-3  text-ellipsis overflow-hidden line-clamp-2"}>
+          <p className={"mb-3 text-ellipsis overflow-hidden line-clamp-2"}>
             {event.description} {event.description}
           </p>
           <p className="font-medium">

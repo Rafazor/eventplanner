@@ -21,11 +21,13 @@ export default function UserEventsComponent(props: IProps) {
     <div>
       <p className="font-medium mb-2 text-lg">Your next events:</p>
       <Carousel
+        keyBoardControl={true}
+        key={events.length}
         responsive={responsive}
-        renderArrowsWhenDisabled={false}
-        partialVisbile={true}
+        arrows={false}
         showDots={true}
-        removeArrowOnDeviceType={["tablet", "mobile"]}
+        autoPlay={true}
+        infinite={true}
       >
         {events.map((event) => (
           <EventCardComponent event={event} key={event.id} />
