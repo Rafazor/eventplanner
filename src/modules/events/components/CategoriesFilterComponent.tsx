@@ -10,7 +10,7 @@ export default function CategoriesFilterComponent(props: IProps) {
   const { categories, onChange, activeCategory } = props;
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex flex-wrap items-center gap-2">
       <p>Sort by:</p>
       {categories.map((category) => (
         <button

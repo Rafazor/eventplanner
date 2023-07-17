@@ -9,9 +9,9 @@ export default function LayoutComponent(props: IProps) {
   const { children } = props;
 
   return (
-    <div className="bg-white dark:bg-purple-950 h-screen pt-24">
+    <div className="bg-white dark:bg-purple-950 h-screen">
       <NavComponent />
-      <div className="max-w-screen-xl mx-auto px-4">{children}</div>
+      <div className="max-w-screen-md mx-auto px-4 py-24">{children}</div>
     </div>
   );
 }
