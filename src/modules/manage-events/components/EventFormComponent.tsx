@@ -1,24 +1,21 @@
-import TextFieldComponent from "@/modules/shared/components/TextFieldComponent";
-import { useForm } from "react-hook-form";
-import ButtonComponent from "@/modules/shared/components/ButtonComponent";
-import { FormValues } from "@/modules/manageEvents/types/formValues";
+import TextFieldComponent from "@/shared/components/TextFieldComponent";
+import { Control, FieldErrors, useForm } from "react-hook-form";
+import ButtonComponent from "@/shared/components/ButtonComponent";
+import { EventFormValues } from "@/modules/manage-events/types/formValues";
+import { FormEventHandler } from "react";
 
 interface IProps {
-  onSubmit: (data: FormValues) => void;
+  onSubmit: FormEventHandler<HTMLFormElement>;
   isLoading: boolean;
+  errors: FieldErrors<EventFormValues>;
+  control: Control<EventFormValues>;
 }
 
 export default function EventFormComponent(props: IProps) {
-  const { onSubmit, isLoading } = props;
-
-  const {
-    handleSubmit,
-    control,
-    formState: { errors },
-  } = useForm<FormValues>();
+  const { onSubmit, isLoading, errors, control } = props;
 
   return (
-    <form className="flex flex-col gap-5" onSubmit={handleSubmit(onSubmit)}>
+    <form className="flex flex-col gap-5" onSubmit={onSubmit}>
       <TextFieldComponent
         errors={errors}
         label={"Title"}

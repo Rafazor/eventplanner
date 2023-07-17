@@ -1,22 +1,34 @@
-import { SubmitHandler } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import {
   CreateEventDto,
-  FormValues,
-} from "@/modules/manageEvents/types/formValues";
-import { createEvent } from "@/modules/shared/api/events";
+  EventFormValues,
+} from "@/modules/manage-events/types/formValues";
+import { createEvent } from "@/services/events";
 import { useMutation } from "react-query";
+import { useRouter } from "next/router";
 
-export const useFormData = () => {
+export const useManageEvents = () => {
+  const router = useRouter();
   const { mutate, isLoading } = useMutation({
     mutationFn: (newEvent: CreateEventDto) => createEvent(newEvent),
+    onSuccess: () => {
+      router.push("/");
+    },
   });
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
+  const {
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm<EventFormValues>();
+
+  const onSubmit: SubmitHandler<EventFormValues> = (data) => {
     const formattedData: CreateEventDto = { ...data, categories: [] };
 
     if (data.startDate) {
       formattedData.startDate = new Date(data.startDate);
     }
+
     if (data.endDate) {
       formattedData.endDate = new Date(data.endDate);
     }
@@ -33,5 +45,8 @@ export const useFormData = () => {
   return {
     onSubmit,
     isLoading,
+    handleSubmit,
+    control,
+    errors,
   };
 };

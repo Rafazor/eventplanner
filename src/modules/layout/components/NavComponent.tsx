@@ -1,5 +1,5 @@
 import Link from "next/link";
-import LinkButtonComponent from "@/modules/shared/components/LinkButtonComponent";
+import LinkButtonComponent from "@/shared/components/LinkButtonComponent";
 import ThemeSwitch from "@/modules/layout/components/ThemeSwitch";
 
 export default function NavComponent() {

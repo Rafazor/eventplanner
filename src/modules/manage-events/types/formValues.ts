@@ -1,6 +1,6 @@
-import { IEvent } from "@/modules/shared/types/IEvent";
+import { IEvent } from "@/types/IEvent";
 
-export type FormValues = Pick<
+export type EventFormValues = Pick<
   IEvent,
   "title" | "description" | "startDate" | "endDate" | "image"
 > & { categories: string };
