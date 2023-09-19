@@ -13,7 +13,7 @@ interface IProps {
   type?: HTMLInputTypeAttribute;
 }
 
-export default function TextFieldComponent({
+export default function FieldComponent({
   control,
   className,
   label,

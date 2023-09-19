@@ -2,7 +2,7 @@ import clsx from "clsx";
 
 interface IProps {
   onClick?: () => void;
-  type: "button" | "submit";
+  type?: "button" | "submit";
   label: string;
   className?: string;
   disabled?: boolean;

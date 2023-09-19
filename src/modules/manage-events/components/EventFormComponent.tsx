@@ -1,4 +1,4 @@
-import TextFieldComponent from "@/modules/shared/components/TextFieldComponent";
+import FieldComponent from "@/modules/shared/components/FieldComponent";
 import { Control, FieldErrors } from "react-hook-form";
 import ButtonComponent from "@/modules/shared/components/ButtonComponent";
 import { EventFormValues } from "@/modules/manage-events/types/formValues";
@@ -16,7 +16,7 @@ export default function EventFormComponent(props: IProps) {
 
   return (
     <form className="flex flex-col gap-5" onSubmit={onSubmit}>
-      <TextFieldComponent
+      <FieldComponent
         errors={errors}
         label={"Title"}
         name={"title"}
@@ -25,7 +25,7 @@ export default function EventFormComponent(props: IProps) {
           required: "This is required",
         }}
       />
-      <TextFieldComponent
+      <FieldComponent
         errors={errors}
         label={"Description"}
         name={"description"}
@@ -34,7 +34,7 @@ export default function EventFormComponent(props: IProps) {
           required: "This is required",
         }}
       />
-      <TextFieldComponent
+      <FieldComponent
         type={"datetime-local"}
         errors={errors}
         label={"Start Date"}
@@ -44,7 +44,7 @@ export default function EventFormComponent(props: IProps) {
           required: "This is required",
         }}
       />
-      <TextFieldComponent
+      <FieldComponent
         type={"datetime-local"}
         errors={errors}
         label={"End Date"}
@@ -54,7 +54,7 @@ export default function EventFormComponent(props: IProps) {
           required: "This is required",
         }}
       />
-      <TextFieldComponent
+      <FieldComponent
         errors={errors}
         label={"Image"}
         name={"image"}
@@ -64,7 +64,7 @@ export default function EventFormComponent(props: IProps) {
         }}
         placeholder={"Image URL"}
       />
-      <TextFieldComponent
+      <FieldComponent
         errors={errors}
         label={"Categories"}
         name={"categories"}
