@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { IEvent } from "@/shared/types/IEvent";
+import { IEvent } from "@/modules/shared/types/IEvent";
 import EventListComponent from "@/modules/events/components/EventListComponent";
 import { mockEvents } from "@/mockData/events";
 

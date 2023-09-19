@@ -1,8 +1,8 @@
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import ToggleComponent from "@/shared/components/ToggleComponent";
+import ToggleComponent from "@/modules/shared/components/ToggleComponent";
 
-export default function ThemeSwitch() {
+export default function ThemeSwitchComponent() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 

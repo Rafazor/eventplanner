@@ -3,7 +3,7 @@ import {
   CreateEventDto,
   EventFormValues,
 } from "@/modules/manage-events/types/formValues";
-import { createEvent } from "@/shared/services/events";
+import { createEvent } from "@/modules/shared/services/events";
 import { useMutation } from "react-query";
 import { useRouter } from "next/router";
 

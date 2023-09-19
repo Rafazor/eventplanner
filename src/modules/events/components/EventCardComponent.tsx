@@ -1,5 +1,5 @@
-import { IEvent } from "@/shared/types/IEvent";
-import { isURL } from "@/shared/utils/commonUtils";
+import { IEvent } from "@/modules/shared/types/IEvent";
+import { isURL } from "@/modules/shared/utils/commonUtils";
 import { formatDate } from "@/modules/events/utils/eventsUtil";
 
 interface IProps {

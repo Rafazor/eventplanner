@@ -1,5 +1,5 @@
-import { IEvent } from "@/shared/types/IEvent";
-import { isURL } from "@/shared/utils/commonUtils";
+import { IEvent } from "@/modules/shared/types/IEvent";
+import { isURL } from "@/modules/shared/utils/commonUtils";
 import clsx from "clsx";
 import { IoStar, IoStarOutline } from "react-icons/io5";
 

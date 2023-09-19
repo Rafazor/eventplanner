@@ -1,4 +1,4 @@
-import { IEvent } from "@/shared/types/IEvent";
+import { IEvent } from "@/modules/shared/types/IEvent";
 import EventCardComponent from "@/modules/events/components/EventCardComponent";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -26,7 +26,7 @@ export default function UserEventsComponent(props: IProps) {
         responsive={responsive}
         arrows={false}
         showDots={true}
-        autoPlay={true}
+        autoPlay={false}
         infinite={events.length > 1}
       >
         {events.map((event) => (

@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
-import { IEvent } from "@/shared/types/IEvent";
-import { getEvents } from "@/shared/services/events";
+import { IEvent } from "@/modules/shared/types/IEvent";
+import { getEvents } from "@/modules/shared/services/events";
 import { useMemo, useState } from "react";
 import {
   extractUniqueCategories,
@@ -8,7 +8,7 @@ import {
   sortEventsByStartDate,
   toggleStringInArray,
 } from "@/modules/events/utils/eventsUtil";
-import { useLocalStorage } from "@/shared/hooks/useLocalStorage";
+import { useLocalStorage } from "@/modules/shared/hooks/useLocalStorage";
 
 export default function useEvents() {
   const [categories, setCategories] = useState<string[]>([]);

@@ -1,4 +1,4 @@
-import { IEvent } from "@/shared/types/IEvent";
+import { IEvent } from "@/modules/shared/types/IEvent";
 
 export function extractUniqueCategories(events: IEvent[]): string[] {
   const uniqueCategories: Set<string> = new Set();

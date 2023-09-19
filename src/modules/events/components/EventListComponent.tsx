@@ -1,4 +1,4 @@
-import { IEvent } from "@/shared/types/IEvent";
+import { IEvent } from "@/modules/shared/types/IEvent";
 import EventItemComponent from "@/modules/events/components/EventItemComponent";
 import clsx from "clsx";
 

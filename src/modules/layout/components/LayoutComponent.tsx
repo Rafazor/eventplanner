@@ -1,9 +1,7 @@
 import NavComponent from "@/modules/layout/components/NavComponent";
-import { ReactNode } from "react";
+import { PropsWithChildren } from "react";
 
-interface IProps {
-  children: ReactNode;
-}
+interface IProps extends PropsWithChildren<{}> {}
 
 export default function LayoutComponent(props: IProps) {
   const { children } = props;

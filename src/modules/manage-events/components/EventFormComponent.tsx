@@ -1,6 +1,6 @@
-import TextFieldComponent from "@/shared/components/TextFieldComponent";
+import TextFieldComponent from "@/modules/shared/components/TextFieldComponent";
 import { Control, FieldErrors } from "react-hook-form";
-import ButtonComponent from "@/shared/components/ButtonComponent";
+import ButtonComponent from "@/modules/shared/components/ButtonComponent";
 import { EventFormValues } from "@/modules/manage-events/types/formValues";
 import { FormEventHandler } from "react";
 

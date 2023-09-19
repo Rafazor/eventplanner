@@ -1,4 +1,4 @@
-import { IEvent } from "@/shared/types/IEvent";
+import { IEvent } from "@/modules/shared/types/IEvent";
 
 export type EventFormValues = Pick<
   IEvent,

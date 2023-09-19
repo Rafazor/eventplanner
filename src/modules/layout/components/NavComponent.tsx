@@ -1,6 +1,6 @@
 import Link from "next/link";
-import LinkButtonComponent from "@/shared/components/LinkButtonComponent";
-import ThemeSwitch from "@/modules/layout/components/ThemeSwitch";
+import LinkButtonComponent from "@/modules/shared/components/LinkButtonComponent";
+import ThemeSwitchComponent from "@/modules/layout/components/ThemeSwitchComponent";
 
 export default function NavComponent() {
   return (
@@ -14,7 +14,7 @@ export default function NavComponent() {
           </Link>
         </div>
         <div className="flex gap-5 items-center">
-          <ThemeSwitch />
+          <ThemeSwitchComponent />
           <LinkButtonComponent href={"/manageEvents"} label={"Manage Events"} />
         </div>
       </div>
