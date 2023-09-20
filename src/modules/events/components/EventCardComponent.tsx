@@ -24,7 +24,7 @@ export default function EventCardComponent(props: IProps) {
             {event.title}
           </p>
           <p className={"mb-3 text-ellipsis overflow-hidden line-clamp-2"}>
-            {event.description} {event.description}
+            {event.description}
           </p>
           <p className="font-medium">
             {event.categories.map((category, index) =>
