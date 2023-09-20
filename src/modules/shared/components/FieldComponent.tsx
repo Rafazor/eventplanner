@@ -1,9 +1,9 @@
-import { Controller } from "react-hook-form";
+import { Control, Controller } from "react-hook-form";
 import clsx from "clsx";
 import { HTMLInputTypeAttribute } from "react";
 
 interface IProps {
-  control: any;
+  control: Control<any>;
   name: string;
   label: string;
   className?: string;
@@ -39,6 +39,7 @@ export default function FieldComponent({
                 {label}
               </label>
               <input
+                name={name}
                 onChange={onChange}
                 onBlur={onBlur}
                 ref={ref}
